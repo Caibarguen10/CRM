@@ -3,7 +3,7 @@
  * CRM SERVICE - MICROSERVICIO DE GESTIÓN DE RELACIONES CON CLIENTES
  * ====================================================================
  * 
- * Este archivo configura y arranca el microservicio CRM desarrollado con .NET 10.
+ * Este archivo configura y arranca el microservicio CRM desarrollado con .NET 8 (LTS).
  * 
  * CARACTERÍSTICAS IMPLEMENTADAS:
  * ✓ Entity Framework Core con SQLite (persistencia real)

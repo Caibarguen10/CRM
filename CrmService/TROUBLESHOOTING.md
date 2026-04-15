@@ -504,7 +504,7 @@ dotnet run
 
 Si aún así falla:
 
-1. Verifica que tienes .NET 10 SDK instalado: `dotnet --version`
+1. Verifica que tienes .NET 8 SDK instalado: `dotnet --version`
 2. Clona el repositorio de nuevo en una carpeta diferente
 3. Abre un issue en GitHub con el log completo del error
 
