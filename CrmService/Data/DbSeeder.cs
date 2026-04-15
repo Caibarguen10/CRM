@@ -89,7 +89,6 @@ public static class DbSeeder
 			FullName = "Juan Pérez García",
 			Email = "juan.perez@email.com",
 			Phone = "+34 600 123 456",
-			Address = "Calle Mayor 123, 28013 Madrid, España",
 			CreatedBy = "admin",
 			CreatedAt = DateTime.UtcNow
 		};
@@ -100,7 +99,6 @@ public static class DbSeeder
 			FullName = "María López Fernández",
 			Email = "maria.lopez@email.com",
 			Phone = "+34 600 654 321",
-			Address = "Avenida Diagonal 456, 08036 Barcelona, España",
 			CreatedBy = "admin",
 			CreatedAt = DateTime.UtcNow
 		};
@@ -116,8 +114,7 @@ public static class DbSeeder
 		var contact1 = new Contact
 		{
 			ClientId = client1.Id,
-			FirstName = "Juan",
-			LastName = "Pérez García",
+			Name = "Juan Pérez García",
 			Email = "juan.perez@email.com",
 			Phone = "+34 600 123 456",
 			Position = "Director General",
@@ -128,8 +125,7 @@ public static class DbSeeder
 		var contact2 = new Contact
 		{
 			ClientId = client2.Id,
-			FirstName = "María",
-			LastName = "López Fernández",
+			Name = "María López Fernández",
 			Email = "maria.lopez@email.com",
 			Phone = "+34 600 654 321",
 			Position = "Directora de Operaciones",
@@ -148,7 +144,7 @@ public static class DbSeeder
 		var note1 = new ClientNote
 		{
 			ClientId = client1.Id,
-			Content = "Primera reunión realizada. El cliente muestra interés en nuestros servicios de consultoría. Programar demo para la próxima semana.",
+			Note = "Primera reunión realizada. El cliente muestra interés en nuestros servicios de consultoría. Programar demo para la próxima semana.",
 			CreatedBy = "asesor",
 			CreatedAt = DateTime.UtcNow.AddDays(-2)
 		};
@@ -156,7 +152,7 @@ public static class DbSeeder
 		var note2 = new ClientNote
 		{
 			ClientId = client1.Id,
-			Content = "Demo completada exitosamente. El cliente solicita propuesta económica detallada. Presupuesto estimado: 25,000 EUR.",
+			Note = "Demo completada exitosamente. El cliente solicita propuesta económica detallada. Presupuesto estimado: 25,000 EUR.",
 			CreatedBy = "asesor",
 			CreatedAt = DateTime.UtcNow.AddDays(-1)
 		};
@@ -164,7 +160,7 @@ public static class DbSeeder
 		var note3 = new ClientNote
 		{
 			ClientId = client2.Id,
-			Content = "Cliente referido por Juan Pérez. Interesada en servicios de auditoría. Coordinar llamada con el equipo técnico.",
+			Note = "Cliente referido por Juan Pérez. Interesada en servicios de auditoría. Coordinar llamada con el equipo técnico.",
 			CreatedBy = "admin",
 			CreatedAt = DateTime.UtcNow
 		};
@@ -181,10 +177,8 @@ public static class DbSeeder
 		{
 			ClientId = client1.Id,
 			Title = "Proyecto de Consultoría CRM",
-			Description = "Implementación de sistema CRM personalizado para gestión de ventas y marketing. Incluye formación de usuarios y soporte por 6 meses.",
-			Amount = 25000.00m, // Usa decimal para precisión exacta
-			Stage = "Proposal", // Etapas: Lead, Qualification, Proposal, Negotiation, Closed-Won, Closed-Lost
-			CloseDate = DateTime.UtcNow.AddMonths(1),
+			EstimatedAmount = 25000.00m,
+			Status = "Proposal",
 			CreatedBy = "asesor",
 			CreatedAt = DateTime.UtcNow
 		};
@@ -193,10 +187,8 @@ public static class DbSeeder
 		{
 			ClientId = client2.Id,
 			Title = "Auditoría de Sistemas IT",
-			Description = "Auditoría completa de infraestructura tecnológica y procedimientos de seguridad. Incluye informe detallado y recomendaciones.",
-			Amount = 15000.00m,
-			Stage = "Qualification",
-			CloseDate = DateTime.UtcNow.AddMonths(2),
+			EstimatedAmount = 15000.00m,
+			Status = "Qualification",
 			CreatedBy = "admin",
 			CreatedAt = DateTime.UtcNow
 		};

@@ -308,8 +308,8 @@ az webapp up --name mi-crm-api --resource-group mi-grupo
 
 ### Opción 2: Docker
 ```dockerfile
-FROM mcr.microsoft.com/dotnet/aspnet:10.0
-COPY bin/Release/net10.0/publish/ app/
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
+COPY bin/Release/net8.0/publish/ app/
 ENTRYPOINT ["dotnet", "app/CrmService.dll"]
 ```
 
@@ -320,8 +320,8 @@ docker run -p 5000:5000 crm-api
 
 ### Opción 3: IIS (Windows Server)
 1. Publicar con `dotnet publish -c Release`
-2. Copiar carpeta `bin/Release/net10.0/publish/` a IIS
-3. Configurar Application Pool (.NET 10)
+2. Copiar carpeta `bin/Release/net8.0/publish/` a IIS
+3. Configurar Application Pool (.NET 8)
 
 **📚 Guía completa de deployment**: Ver [DEPLOYMENT.md](./DEPLOYMENT.md)
 
