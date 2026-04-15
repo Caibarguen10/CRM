@@ -28,7 +28,7 @@ Deberías ver algo como: `Entity Framework Core .NET Command-line Tools 9.0.0`
 ### **Paso 2: Navegar a la carpeta del proyecto**
 
 ```bash
-cd "C:\Users\calo-\OneDrive\Documentos\Proyecto Angular\App CRM Simple\CrmService"
+cd CRM/CrmService
 ```
 
 ---

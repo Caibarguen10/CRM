@@ -21,7 +21,8 @@ Esta guía te muestra **paso a paso** cómo probar el microservicio CRM usando S
 
 ### Paso 1.1: Navegar al directorio del proyecto
 ```bash
-cd "C:\Users\calo-\OneDrive\Documentos\Proyecto Angular\App CRM Simple\CrmService"
+git clone https://github.com/Caibarguen10/CRM.git
+cd CRM/CrmService
 ```
 
 ### Paso 1.2: Ejecutar el proyecto

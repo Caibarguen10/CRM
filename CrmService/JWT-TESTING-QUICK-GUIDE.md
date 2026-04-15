@@ -11,7 +11,7 @@ Si obtienes 401 Unauthorized después de hacer login, es porque **el token no se
 ### 1. Iniciar la Aplicación
 
 ```bash
-cd "C:\Users\calo-\Documents\App CRM Simple\CrmService"
+cd CRM/CrmService
 dotnet run
 ```
 

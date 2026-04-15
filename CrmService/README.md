@@ -2,7 +2,11 @@
 
 ## 📋 Descripción General
 
-Microservicio CRM completo y **production-ready** desarrollado en **.NET 8 (LTS)** (C#) que proporciona gestión integral de clientes, contactos, notas y oportunidades de venta. Implementa características empresariales avanzadas como auditoría automática, soft delete, autenticación JWT con roles, y arquitectura en capas siguiendo principios SOLID.
+**Backend API REST para gestión de clientes, contactos, notas comerciales y oportunidades de venta, con autenticación por roles y auditoría automática.**
+
+Desarrollado en **.NET 8 (LTS)** con arquitectura en capas, este microservicio CRM permite a equipos comerciales centralizar información de clientes, hacer seguimiento de interacciones mediante notas, gestionar contactos clave y trackear oportunidades de venta. Incluye control de acceso granular por roles (Admin, Asesor, Auditor), auditoría completa de cambios (quién y cuándo), y soft delete para mantener trazabilidad histórica.
+
+**Stack:** .NET 8, Entity Framework Core, JWT Authentication, AutoMapper, SQLite/SQL Server
 
 ---
 
@@ -372,7 +376,8 @@ El proyecto incluye **16 capturas de pantalla** que demuestran todas las funcion
 
 #### 1. Clonar el repositorio
 ```bash
-cd "C:\Users\calo-\OneDrive\Documentos\Proyecto Angular\App CRM Simple\CrmService"
+git clone https://github.com/Caibarguen10/CRM.git
+cd CRM/CrmService
 ```
 
 #### 2. Restaurar paquetes NuGet
