@@ -95,6 +95,29 @@ Al ejecutar por primera vez, obtienes automáticamente:
 
 ---
 
+## 📸 Demo Visual - Ve el API en Acción
+
+¿Quieres ver cómo funciona antes de instalarlo? Tenemos **16 capturas de pantalla** que demuestran cada funcionalidad:
+
+### 🎯 Highlights:
+
+| **Funcionalidad** | **Captura** | **¿Qué Demuestra?** |
+|-------------------|-------------|---------------------|
+| 🔐 **Login JWT** | [01-login-exitoso.PNG](Screenshots/01-login-exitoso.PNG) | Autenticación con token JWT, usuario admin |
+| 📋 **Listar Clientes** | [03-get-clients-200.PNG](Screenshots/03-get-clients-200.PNG) | Paginación con 2 clientes, metadatos completos |
+| ➕ **Crear Cliente** | [04-post-client-201.PNG](Screenshots/04-post-client-201.PNG) | Creación exitosa con auditoría automática |
+| 🗑️ **Soft Delete** | [05-delete-client-204.PNG](Screenshots/05-delete-client-204.PNG) | Eliminación lógica (no borra físicamente) |
+| 🚫 **Control de Acceso** | [07-forbidden-403.PNG](Screenshots/07-forbidden-403.PNG) | Auditor NO puede crear clientes (403) |
+| 🔍 **Filtrado** | [10-filtrado-email.PNG](Screenshots/10-filtrado-email.PNG) | Búsqueda por email específico |
+| 📄 **Paginación** | [11-paginacion.PNG](Screenshots/11-paginacion.PNG) | Control de tamaño de páginas |
+| 🔗 **Relaciones** | [12-crear-contacto.PNG](Screenshots/12-crear-contacto.PNG) | Contacto asociado a cliente |
+| 🔓 **Token Decodificado** | [09-jwt-io-decoded.PNG](Screenshots/09-jwt-io-decoded.PNG) | Validación en jwt.io con claims visibles |
+
+**👉 Ver todas las 16 capturas con descripciones detalladas:**  
+📁 **[Screenshots/README.md](Screenshots/README.md)**
+
+---
+
 ## 🔑 Prueba Rápida (2 minutos)
 
 ### 1️⃣ Hacer Login (Obtener Token)

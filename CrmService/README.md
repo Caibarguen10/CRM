@@ -2,7 +2,7 @@
 
 ## 📋 Descripción General
 
-Microservicio CRM completo y **production-ready** desarrollado en **.NET 10** (C#) que proporciona gestión integral de clientes, contactos, notas y oportunidades de venta. Implementa características empresariales avanzadas como auditoría automática, soft delete, autenticación JWT con roles, y arquitectura en capas siguiendo principios SOLID.
+Microservicio CRM completo y **production-ready** desarrollado en **.NET 8 (LTS)** (C#) que proporciona gestión integral de clientes, contactos, notas y oportunidades de venta. Implementa características empresariales avanzadas como auditoría automática, soft delete, autenticación JWT con roles, y arquitectura en capas siguiendo principios SOLID.
 
 ---
 
@@ -308,22 +308,22 @@ CrmService/
 ## 🛠️ Tecnologías Utilizadas
 
 ### Framework y Lenguaje
-- **.NET 10** (C#)
+- **.NET 8 (LTS)** (C#)
 - **ASP.NET Core Web API**
 
 ### ORM y Base de Datos
-- **Entity Framework Core 9.0** (Code First)
+- **Entity Framework Core 8.0** (Code First)
 - **SQLite** (desarrollo/demo)
 - Soporte para **SQL Server**, **PostgreSQL** (producción)
 
 ### Paquetes NuGet Principales
 ```xml
-<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
-<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.0" />
-<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0" />
+<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.11" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.11" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.11" />
 <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
 <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
-<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.0" />
+<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" />
 <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.0.0" />
 ```
 
@@ -339,10 +339,33 @@ CrmService/
 
 ---
 
+## 📸 Capturas de Pantalla
+
+El proyecto incluye **16 capturas de pantalla** que demuestran todas las funcionalidades del API en acción:
+
+- ✅ Autenticación JWT y autorización por roles
+- ✅ CRUD completo de clientes, contactos, notas y oportunidades
+- ✅ Soft delete y auditoría automática
+- ✅ Filtrado, paginación y búsquedas
+- ✅ Manejo de errores (401, 403, 404)
+- ✅ Validación de tokens en jwt.io
+
+**Ver todas las capturas:** [Screenshots/README.md](Screenshots/README.md)
+
+### Vista Previa:
+
+| Autenticación | CRUD Clientes | Control de Permisos |
+|---------------|---------------|---------------------|
+| ![Login](Screenshots/01-login-exitoso.PNG) | ![GET Clients](Screenshots/03-get-clients-200.PNG) | ![403 Forbidden](Screenshots/07-forbidden-403.PNG) |
+
+*Login con JWT, listado de clientes con paginación, y error 403 cuando un Auditor intenta crear clientes*
+
+---
+
 ## 🚀 Instalación y Configuración
 
 ### Prerrequisitos
-- **.NET 10 SDK** instalado ([Descargar aquí](https://dotnet.microsoft.com/download/dotnet/10.0))
+- **.NET 8 SDK** instalado ([Descargar aquí](https://dotnet.microsoft.com/download/dotnet/8.0))
 - **IDE**: Visual Studio 2022, Visual Studio Code o Rider
 
 ### Pasos de Instalación
