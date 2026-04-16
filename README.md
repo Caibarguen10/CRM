@@ -10,6 +10,48 @@ Desarrollado en **.NET 8 (LTS)** con arquitectura en capas, este microservicio C
 
 ---
 
+## 🌐 Demo en Vivo
+
+**¡Prueba el API ahora mismo!** El microservicio está deployado y funcionando 24/7 en Railway:
+
+### 🔗 URLs del Demo
+- **Swagger UI (Documentación Interactiva):** https://crm-production-f7dc.up.railway.app/swagger
+- **Base URL del API:** `https://crm-production-f7dc.up.railway.app`
+
+### 🔑 Credenciales de Prueba
+
+| Usuario | Contraseña | Rol | Permisos |
+|---------|-----------|-----|----------|
+| `admin` | `Admin123!` | Admin | CRUD completo en todas las entidades |
+| `asesor` | `Asesor123!` | Asesor | Read + Create en clientes/contactos/oportunidades, CRUD en notas |
+| `auditor` | `Auditor123!` | Auditor | Solo lectura (Read) en todas las entidades |
+
+### ⚡ Prueba Rápida con cURL
+
+```bash
+# 1. Login y obtener JWT token
+curl -X POST "https://crm-production-f7dc.up.railway.app/api/auth/login" \
+  -H "Content-Type: application/json" \
+  -d '{"username":"admin","password":"Admin123!"}'
+
+# 2. Listar clientes (reemplaza <TOKEN> con el token obtenido)
+curl -X GET "https://crm-production-f7dc.up.railway.app/api/clients" \
+  -H "Authorization: Bearer <TOKEN>"
+```
+
+### 🎯 Prueba Interactiva en Swagger
+1. Abre https://crm-production-f7dc.up.railway.app/swagger
+2. Expande **`POST /api/auth/login`** y click en "Try it out"
+3. Ingresa: `{"username":"admin","password":"Admin123!"}`
+4. Click en "Execute" y **copia el token** de la respuesta
+5. Click en el botón **"Authorize"** (🔒 arriba a la derecha)
+6. Pega el token y click "Authorize"
+7. ¡Ahora puedes probar todos los endpoints del API!
+
+> **Nota:** El servicio en Railway se reinicia automáticamente si está inactivo por más de 15 minutos. La primera request puede tardar ~30 segundos en responder.
+
+---
+
 ## ✨ Características Principales
 
 ### 🔐 Seguridad y Autenticación
