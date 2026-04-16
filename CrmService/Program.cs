@@ -34,6 +34,15 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // ====================================================================
+// CONFIGURACIÓN DE PUERTOS PARA DEPLOY EN CLOUD
+// ====================================================================
+
+// Railway/Render asignan el puerto dinámicamente via variable de entorno PORT
+// Esto permite que la app funcione tanto en local como en cloud
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5001";
+builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
+
+// ====================================================================
 // SECCIÓN 1: CONFIGURACIÓN DE BASE DE DATOS
 // ====================================================================
 
@@ -260,16 +269,17 @@ using (var scope = app.Services.CreateScope())
 app.UseMiddleware<ErrorHandlingMiddleware>();
 
 // ====================================================================
-// MIDDLEWARE 2: SWAGGER (SOLO EN DESARROLLO)
+// MIDDLEWARE 2: SWAGGER
 // ====================================================================
 
-// Habilitar Swagger UI solo en ambiente de desarrollo
-// Producción no debería exponer la documentación interactiva
-if (app.Environment.IsDevelopment())
+// Habilitar Swagger UI para demos y documentación interactiva
+// NOTA: En un entorno real de producción, considera deshabilitar o proteger Swagger
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "CRM API v1");
+    c.RoutePrefix = "swagger"; // Accesible en /swagger
+});
 
 // ====================================================================
 // MIDDLEWARE 3: REDIRECCIÓN HTTPS
