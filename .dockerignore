@@ -1,0 +1,27 @@
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# CI/CD
+.github/
+
+# Documentation
+*.md
+*.pdf
+Screenshots/
+
+# Build artifacts
+**/bin/
+**/obj/
+**/out/
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Railway/Deploy configs (no copiar al container)
+nixpacks.toml
+railway.json
