@@ -150,7 +150,30 @@ builder.Services.AddAuthorization(options =>
 });
 
 // ====================================================================
-// SECCIÓN 6: CONTROLADORES Y API
+// SECCIÓN 6: CORS - COMPARTIR RECURSOS ENTRE ORÍGENES
+// ====================================================================
+
+// Configurar CORS para permitir requests desde el frontend Angular
+// Esto es necesario porque el frontend (localhost:4200) y el backend (Railway)
+// están en diferentes dominios, y los navegadores bloquean esto por seguridad
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularApp", policy =>
+    {
+        policy.WithOrigins(
+                "http://localhost:4200",      // Angular development
+                "http://localhost:4201",      // Backup port
+                "https://localhost:4200",     // HTTPS local
+                "https://localhost:4201"      // HTTPS backup
+            )
+            .AllowAnyMethod()                 // Permitir GET, POST, PUT, DELETE, etc.
+            .AllowAnyHeader()                 // Permitir cualquier header (Authorization, Content-Type, etc.)
+            .AllowCredentials();              // Permitir cookies y credenciales
+    });
+});
+
+// ====================================================================
+// SECCIÓN 7: CONTROLADORES Y API
 // ====================================================================
 
 // Registrar los controladores de la API
@@ -289,7 +312,15 @@ app.UseSwaggerUI(c =>
 app.UseHttpsRedirection();
 
 // ====================================================================
-// MIDDLEWARE 4: AUTENTICACIÓN Y AUTORIZACIÓN
+// MIDDLEWARE 4: CORS - PERMITIR REQUESTS DESDE FRONTEND
+// ====================================================================
+
+// Habilitar la política CORS definida anteriormente
+// Debe ir ANTES de UseAuthentication y UseAuthorization
+app.UseCors("AllowAngularApp");
+
+// ====================================================================
+// MIDDLEWARE 5: AUTENTICACIÓN Y AUTORIZACIÓN
 // ====================================================================
 
 // ORDEN IMPORTANTE: UseAuthentication debe ir ANTES de UseAuthorization
@@ -302,7 +333,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 // ====================================================================
-// MIDDLEWARE 5: MAPEO DE CONTROLADORES
+// MIDDLEWARE 6: MAPEO DE CONTROLADORES
 // ====================================================================
 
 // Mapear los endpoints de los controladores
