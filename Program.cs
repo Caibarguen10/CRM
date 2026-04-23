@@ -161,10 +161,11 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAngularApp", policy =>
     {
         policy.WithOrigins(
-                "http://localhost:4200",      // Angular development
-                "http://localhost:4201",      // Backup port
-                "https://localhost:4200",     // HTTPS local
-                "https://localhost:4201"      // HTTPS backup
+                "http://localhost:4200",                              // Angular development local
+                "http://localhost:4201",                              // Backup port local
+                "https://localhost:4200",                             // HTTPS local
+                "https://localhost:4201",                             // HTTPS backup local
+                "https://sitio-crm-production.up.railway.app"         // Frontend Angular en Railway (PRODUCCIÓN)
             )
             .AllowAnyMethod()                 // Permitir GET, POST, PUT, DELETE, etc.
             .AllowAnyHeader()                 // Permitir cualquier header (Authorization, Content-Type, etc.)
